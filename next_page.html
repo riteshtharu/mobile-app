@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="next_page.css">
+    <title>User\Setting</title>
+</head>
+
+<body>
+
+    <div class="profile-container">
+        <!-- Cover photo -->
+        <div class="cover-photo">
+            <a href="main.html"><span class="back-arrow"><i class="fas fa-arrow-left"></i></span></a>
+            <img src="person.jpg" alt="Cover Photo" id="cover-img">
+            <input type="file" accept="image/*" id="inputImage" style="display: none;">
+        </div>
+
+        <!-- Profile photo -->
+        <div class="profile-photo">
+            <img src="person.jpg" alt="Profile Photo" id="profileImg">
+            <input type="file" accept="image/*" id="inputImageCover" style="display: none;">
+        </div>
+
+        <!-- User name and bio (optional) -->
+        <div class="user-info">
+            <h2>User</h2>
+            <p>Welcome to my profile!</p>
+        </div>
+    </div>
+
+    <div class="edit-account">
+        <h3>Edit Account</h3>
+        <form id="editForm">
+            <input type="text" id="name" placeholder="Enter your name" required maxlength="17" minlength="6">
+            <input type="text" id="status" placeholder="Edit status" minlength="25" maxlength="30">
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+
+
+
+    <script src="next_page.js"></script>
+</body>
+
+</html>

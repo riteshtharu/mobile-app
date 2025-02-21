@@ -1,0 +1,170 @@
+@media screen and (max-width: 768px){
+    .navbar a {
+        display: none; 
+      }
+      .logo{
+        font-size: 1.5rem
+      }
+      #menu-icon{
+        display: block;
+        cursor: pointer;
+      }
+      /* -----------This is the Home Section --------------*/
+      .home{
+        margin-top: 12rem;
+        flex-direction: column;
+        height: auto;
+      text-align: justify;
+      }
+      .home-content h1{
+        font-size: 3rem;
+      }
+      .home-content h3{
+        font-size: 2.5rem;
+      }
+      .home-img img{
+        width: 55vw;
+        border-radius: 50%;
+       }
+      /* -----------This is the About Section --------------*/
+      .about{
+        flex-direction: column;
+        margin-top: 5rem;
+        /* height: auto; */
+       }
+     
+       .about .heads{
+        font-size: 2rem;
+       }
+       .about h3{
+        font-size: 2rem;
+       }
+       .about-img{
+        border-radius: 50%;
+        margin-top: 5rem;
+       }
+       .about-img img{
+        width: 40vw;
+       }
+ /* ----------This is the Sidebar Code ------------*/
+ .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 200px;
+    height: 100%;
+    background-color: #780C28;
+    transition: left 1s ease;
+  }
+  
+  .sidebar .navbar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+  }
+  
+  .sidebar .navbar a {
+    padding: 1.5rem 2rem;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 700;
+    transition: 0.3s ease;
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2); 
+  }
+  
+  .sidebar .navbar a:hover,
+  .sidebar .navbar a.active {
+    color: var(--text-color);
+  }
+  .sidebar {
+    z-index: 9999; 
+  }
+  
+  .header {
+    z-index: 1000; 
+  }
+ /* ----------This is the Service Code ------------*/
+ .services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-cards {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .service-card {
+    width: 80%; 
+    margin-bottom: 2rem; 
+  }
+
+  
+  .service-card i {
+    font-size: 5rem; 
+  }
+
+ 
+  .service-card p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 420px){
+    .navbar{
+      display: none;
+    }
+        .logo{
+          font-size: 1.5rem
+        }
+       /*------------ This is the header Section ----------------*/
+        .home{
+          margin-top: 12rem;
+          flex-direction: column;
+          height: auto;
+        text-align: justify;
+        }
+        .home-content h1{
+          font-size: 3rem;
+        }
+        .home-content h3{
+          font-size: 2.5rem;
+        }
+        .home-img img{
+          width: 55vw;
+          border-radius: 50%;
+         }
+         /*-------------- This is the Second Section -------------*/
+         .about{
+          flex-direction: column;
+          margin-top: 5rem;
+          /* height: auto; */
+         }
+       
+         .about .heads{
+          font-size: 2rem;
+         }
+         .about h3{
+          font-size: 2rem;
+         }
+         .about-img{
+          border-radius: 50%;
+          margin-top: 5rem;
+         }
+         .about-img img{
+          width: 55vw;
+         }
+         #services .heads{
+          font-size: 3rem;
+          /* padding-top: 3.5rem; */
+         }
+         /**/
+         .service-card {
+          width: 100%; 
+        }
+     
+        
+          
+  }

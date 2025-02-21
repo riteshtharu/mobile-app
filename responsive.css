@@ -1,0 +1,704 @@
+.menu-icon {
+  display: none;
+}
+
+
+
+@media screen and (max-width: 991px) {
+
+  /*------------------ This is First Section of Dress Student -----------------*/
+
+  .image-content img {
+    max-width: 90%;
+  }
+
+  .background-image {
+    width: 90%;
+  }
+
+  .foreground-image {
+    width: 80%;
+  }
+
+  .text-content {
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  .text-content {
+    font-size: 12px;
+  }
+
+  .image-content {
+    max-width: 400px;
+  }
+
+  /*---------------------- This is Our Principle Section -----------------------*/
+
+  .third-section {
+    padding: 2rem;
+  }
+
+  .section-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .contents-are h2 {
+    font-size: 35px;
+  }
+
+  .contents-are p {
+    font-size: 18px;
+    padding-right: 1rem;
+    line-height: 1.6;
+  }
+
+  .pstar-image {
+    position: absolute;
+    top: -40px;
+    right: -50px;
+    width: 100px;
+    height: auto;
+  }
+
+  /*-------------------- This is Our Hexagonal Image Gallery Section ----------------------*/
+
+  .gallery {
+    --s: 125px;
+    --g: 5px;
+    margin: calc(var(--s) + var(--g));
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .quote-box {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .quote-icon {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .message-box {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .message-box p {
+    font-size: 15px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  /*-------------- This will Our Slider Of Images ---------------*/
+
+  .slider {
+    margin: 0 auto;
+  }
+
+  .slides {
+    margin-top: 3rem;
+  }
+
+  .slide {
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .rect-box {
+    padding: 50px;
+    width: 60%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .photo-container {
+    width: 300px;
+    height: 400px;
+    margin-top: 0;
+  }
+
+  .person-name {
+    top: -30px;
+  }
+
+  .person-name h3 {
+    font-size: 18px;
+  }
+
+  .person-name span {
+    font-size: 14px;
+  }
+
+  .container-new h2 {
+    font-size: 28px;
+  }
+
+  .nav-arrows button {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  /*Banner*/
+  .banner-ad {
+    width: 95%;
+    height: auto;
+  }
+
+  .banner-img {
+    max-height: 70vh;
+    object-fit: contain;
+  }
+
+  .close-btn {
+    font-size: 28px;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+
+  .second-navbar #marker {
+    display: none;
+}
+  /*-------------- This is Our First-Section Of Dress Student  ------------*/
+  .first-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .text-content {
+    padding: 10px 0;
+  }
+
+  .text-content p {
+    font-size: 15px;
+  }
+
+  .image-content {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .image-content img {
+    max-width: 80%;
+  }
+
+  .background-image {
+    width: 80%;
+  }
+
+  .foreground-image {
+    width: 70%;
+  }
+
+  .text-content h1 {
+    font-size: 25px;
+  }
+
+  /*------------------------- This is our Three card Section--------------------------*/
+  .cards-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .student-card,
+  .student-card.large {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .student-card.large {
+    bottom: 0;
+  }
+
+  /*------------------------ This is Our Principle Section ----------------------*/
+
+  .third-section {
+    padding: 0rem 2rem;
+  }
+
+  .section-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image {
+    max-width: 100%;
+  }
+
+  .contents-are h2 {
+    font-size: 30px;
+  }
+
+  .contents-are p {
+    font-size: 15px;
+    padding: 1rem 0;
+  }
+
+  .pstar-image {
+    position: absolute;
+    top: -35px;
+    right: -55px;
+    width: 100px;
+    height: auto;
+  }
+
+  /*-------------------------- This is Hexagonal Gallery Section -------------------------*/
+
+  .contain {
+    padding: 2rem;
+    gap: 20px;
+  }
+
+  .gallery {
+    --s: 100px;
+    --g: 5px;
+    margin: calc(var(--s) + var(--g));
+  }
+
+  .gallery>img {
+    width: var(--s);
+  }
+
+  .quote-box {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .quote-icon {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .message-box {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .message-box p {
+    font-size: 15px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  /*----------------------- This is Our Automatic Image Slider -------------------------*/
+
+  .container-new h2 {
+    font-size: 28px;
+    padding-top: 1.5rem;
+  }
+
+  .slides {
+    margin-top: 2rem;
+  }
+
+  .slide {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .rect-box {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .rect-box .quote {
+    font-size: 24px;
+  }
+
+  .rect-box .text {
+    font-size: 14px;
+    padding-bottom: 2rem;
+  }
+
+  .photo-container {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .person-name {
+    position: relative;
+    top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .person-name span {
+    padding-left: 0;
+    display: block;
+    margin-top: 5px;
+  }
+
+  .person-name h3 {
+    font-size: 18px;
+  }
+
+  .nav-arrows {
+    transform: translateY(-50%);
+  }
+
+  .nav-arrows button {
+
+    font-size: 16px;
+  }
+
+  /*-------------------- This is Our Contact Form Section -----------------*/
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .contact-info {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 30px;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: none;
+  }
+
+  /*--------------------------- This is Making Sidebar -----------------------------*/
+
+  .second-navbar #sidebar {
+    flex-direction: column;
+    position: absolute;
+    top: 0%;
+    left: -200px;
+    width: 200px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease-in-out;
+    overflow-x: hidden;
+  }
+
+
+  .second-navbar #sidebar li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    top: 15%;
+
+  }
+
+  .second-navbar #sidebar li a {
+    color: black;
+  }
+
+  .second-navbar #sidebar.active {
+    display: flex;
+  }
+
+
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  /*Banner*/
+  .banner-ad {
+    width: 95%;
+    height: auto;
+  }
+
+  .banner-img {
+    max-height: 70vh;
+    object-fit: contain;
+  }
+
+  .close-btn {
+    font-size: 28px;
+  }
+
+}
+
+
+
+@media (max-width: 420px) {
+
+  /*------------------- This is first navbar -----------------------*/
+  .right-icons {
+    display: none;
+  }
+
+  .contact-icons,
+  .email-icon {
+    font-size: 2.8vw;
+  }
+
+  .contact-icons i,
+  .email-icon i {
+    font-size: 2.8vw;
+  }
+
+  /*----------------------- This is second navbar -------------------*/
+
+  #marker {
+    display: none;
+  }
+
+  /*------------------ This is Our First Section Dress Student --------------------*/
+
+  .first-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .text-content {
+    padding: 10px 0;
+  }
+
+  .text-content p {
+    font-size: 15px;
+  }
+
+  .image-content {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .image-content img {
+    max-width: 80%;
+  }
+
+  .background-image {
+    width: 80%;
+  }
+
+  .foreground-image {
+    width: 70%;
+  }
+
+  .text-content h1 {
+    font-size: 4vw;
+  }
+
+  /*----------------------- This is Our Principle Sir Section ------------------------------*/
+  .third-section {
+    height: auto;
+    padding: 1.5rem 1px;
+  }
+
+  .section-content {
+    padding: 0;
+  }
+
+  .image {
+    width: 350px;
+  }
+
+  .image img {
+    max-width: 350px;
+  }
+
+  .contents-are h2 {
+    font-size: 30px;
+  }
+
+  .contents-are p {
+    font-size: 16px;
+  }
+
+  .contain {
+    flex-direction: column;
+  }
+
+  .pstar-image {
+    position: absolute;
+    top: -35px;
+    right: -20px;
+    width: 50px;
+    height: auto;
+  }
+
+  /*------------------------ This Is Our Counter Section ----------------------*/
+
+  .counters {
+    flex-direction: column;
+    padding: 2em;
+  }
+
+  .counters .counter {
+    margin: 1em 0;
+  }
+
+  .counters .counter:not(:last-child)::before {
+    display: none;
+  }
+
+  /*---------------------- This is animation image slider --------------------------*/
+
+  .slide {
+    flex-direction: column;
+    padding: 10px;
+    height: auto;
+  }
+
+  .slides {
+    margin-top: 3rem;
+  }
+
+  .rect-box {
+    padding: 20px;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .rect-box .quote {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .rect-box .text {
+    font-size: 14px;
+    line-height: 1.4;
+    padding-bottom: 2rem;
+  }
+
+  .photo-container {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .photo-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .person-name {
+    position: static;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .person-name h3 {
+    font-size: 18px;
+  }
+
+  .person-name span {
+    display: block;
+    padding-left: 0;
+    font-size: 14px;
+  }
+
+  .container-new h2 {
+    font-size: 28px;
+  }
+
+  .text p {
+    font-size: 15px;
+  }
+
+  /*---------------------------- This is Icons Section ---------------------------*/
+  .vidya-container h1 {
+    font-size: 30px;
+  }
+
+  .vidya-container p {
+    font-size: 16px;
+  }
+
+
+  .vidya-icon-box i {
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  /*--------------------- This is Footer Section Responsiveness ---------------------*/
+  .footer {
+    padding: 20px 0;
+    font-size: 0.7em;
+  }
+
+  .footer .row {
+    margin: 2% 0;
+    padding: 1% 0;
+  }
+
+  .footer .row a i {
+    font-size: 2.5em;
+    margin: 0 15px;
+  }
+
+  .footer .row ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer .row ul li {
+    display: inline-block;
+    margin: 5px 10px;
+    font-size: 0.9em;
+  }
+
+  .footer .row ul li a {
+    display: inline-block;
+    margin: 5px 0;
+    font-size: 12px;
+  }
+
+  .footer .row:last-child {
+    font-size: 1em;
+  }
+
+  /*Banner*/
+  .banner-ad {
+    width: 100%;
+    height: auto;
+  }
+
+  .banner-img {
+    max-height: 60vh;
+    object-fit: contain;
+  }
+
+  .close-btn {
+    font-size: 24px;
+  }
+
+
+}

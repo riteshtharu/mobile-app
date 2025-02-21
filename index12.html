@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Long Note</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+        <link rel="stylesheet" href="new.css">
+    </head>
+    
+<body>
+    <div id="container">
+        <!-- Button to open the popup -->
+        <div id="addNoteIcon" class="icon">
+            <img src="add-task_12693750.png" alt="Add Note Icon" />
+        </div>
+        
+        <!-- Popup to Add Note -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span id="closePopup" class="close">&times;</span>
+                <h3>Add a new note</h3>
+                <label for="noteTitle">Title</label>
+                <input type="text" id="noteTitle" placeholder="Enter title" />
+                
+                <label for="noteDescription">Description</label>
+                <textarea id="noteDescription" placeholder="Enter description"></textarea>
+                
+                <label for="noteColor">Select Color</label>
+                <input type="color" id="noteColor" value="#ffffff" />
+                
+                <button id="addNoteBtn">Add Note</button>
+            </div>
+        </div>
+        
+        <!-- Container to hold all notes -->
+        <div id="notesContainer"></div>
+    </div>
+   <script src="new.js"></script> 
+</body>
+</html>
