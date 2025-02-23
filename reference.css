@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #B2A5FF;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+@font-face {
+  font-family: ritesh;
+  src: url(Momentz.otf);
+}
+
+.heading-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-top: 20px;
+  font-family: ritesh;
+  color: #e65069;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.search-container::after,
+.search-container::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  position: absolute;
+}
+
+.search-container::before {
+  top: -1px;
+  left: -1px;
+  background: linear-gradient(0deg, rgb(218, 232, 247) 0%, rgb(255, 255, 255) 100%);
+  z-index: -1;
+}
+
+.search-container::after {
+  bottom: -1px;
+  right: -1px;
+  background: linear-gradient(0deg, rgb(163, 206, 255) 0%, rgb(211, 232, 255) 100%);
+  box-shadow: rgba(79, 156, 232, 0.7019607843) 3px 3px 5px 0px, rgba(79, 156, 232, 0.7019607843) 5px 5px 20px 0px;
+  z-index: -2;
+}
+
+.input {
+  padding: 10px 10px 10px 15px;
+  /* Adding padding to the left for text */
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 20px;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+  background: linear-gradient(135deg, rgb(239, 247, 255) 0%, rgb(214, 229, 247) 100%);
+}
+
+.input-icon {
+  position: absolute;
+  right: 10px;
+  /* Position the icon to the right */
+  top: 50%;
+  transform: translateY(-50%);
+  /* Vertically center the icon */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-left: 2px solid black;
+  /* Vertical border between text and icon */
+  padding-left: 10px;
+  /* Space between the icon and the border */
+}
+
+.input-container .input {
+  padding-right: 40px;
+  /* Add space for the icon */
+}
+
+.input-icon i {
+  color: black;
+  /* Icon color */
+  font-size: 20px;
+}
+
+.input:focus+.input-icon i {
+  color: #00683C;
+}
+
+.btn-class-name {
+  --primary: 255, 90, 120;
+  --secondary: 150, 50, 60;
+  width: 50px;
+  /*width: 60px;
+  height: 50px;*/
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  /* outline: 10px solid rgb(var(--primary), .5); */
+  border-radius: 100%;
+  position: relative;
+  transition: .3s;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-class-name i {
+  font-size: 24px;
+  /* Icon size */
+  color: white;
+  /* Icon color */
+  z-index: 1;
+  /* Ensure icon is above other elements */
+}
+
+.btn-class-name .back {
+  background: rgb(var(--secondary));
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-class-name .front {
+  background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+  box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+  border-radius: 50%;
+  position: absolute;
+  border: 1px solid rgb(var(--secondary));
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: inherit;
+  transform: translateY(-15%);
+  transition: .15s;
+  color: rgb(var(--secondary));
+}
+
+.btn-class-name:active .front {
+  transform: translateY(0%);
+  box-shadow: 0 0;
+}
+
+/* Task list styling */
+.taskList {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.taskList li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: justify;
+  margin: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  word-wrap: break-word;
+  /* Prevent text from overflowing */
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  position: relative;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Adds space between edit and delete buttons */
+  align-items: center;
+}
+
+
+.taskList li::before {
+  top: -1px;
+  left: -1px;
+  background: linear-gradient(0deg, rgb(218, 232, 247) 0%, rgb(255, 255, 255) 100%);
+  z-index: -1;
+}
+
+.taskList li::after {
+  top: -1px;
+  right: -1px;
+  background: linear-gradient(0deg, rgb(163, 206, 255) 0%, rgb(211, 232, 255) 100%);
+  box-shadow: rgba(79, 156, 232, 0.7019607843) 3px 3px 5px 0px, rgba(79, 156, 232, 0.7019607843) 5px 5px 20px 0px;
+  z-index: -2;
+}
+
+
+.taskList li .deleteBtn {
+  background-color: #e65069;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.taskList li .deleteBtn:hover {
+  background-color: darkred;
+}
+
+/* Checked task styling */
+.checked {
+  text-decoration: line-through;
+  color: #999;/*#999*/
+}
+
+/* Alert message styling */
+.alertMssg {
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/*Edit Task*/
+/* Edit button styling */
+.taskList li .editBtn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* margin-right: 5px; */
+}
+
+.taskList li .editBtn:hover {
+  background-color: #45a049;
+}
+
+.task-time {
+  position: absolute;
+right: 75px;
+top: 50%;
+transform: translateY(-50%);
+
+  font-size: 0.8em;
+  color: gray;
+  /* margin-left: 10px; */
+}
+
+
+@media screen and (max-width: 420px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .heading-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .search-container {
+    padding: 5px;
+    border-radius: 30px;
+  }
+
+  .input {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  .input-icon i {
+    font-size: 18px;
+  }
+}

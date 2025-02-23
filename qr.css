@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", serif;
+  background-color: white;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  left: -250px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 10;
+  transition: left 0.3s ease;
+  font-family: arial, sans-serif;
+}
+
+.sideProfile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sideProfile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.line-through {
+  text-decoration: line-through;
+  margin-bottom: 20px;
+}
+
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.sidebar-icon i {
+  margin-right: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar-icon:hover {
+  background-color: #34495e;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.settings {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.settings:hover {
+  background-color: #34495e;
+  border-radius: 5px;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+  position: relative;
+  background-color: #3ac3af;
+  border-radius: 0 0 50% 50%;
+}
+
+.menu-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-left: 40px;
+
+  overflow: hidden;
+}
+.profileName {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.profileStatus {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.profileStatus {
+  font-size: 16px;
+  color: white;
+  min-width: 160px;
+  overflow: hidden;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 1.5rem;
+}
+
+.container {
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  background: linear-gradient(
+    135deg,
+    rgb(218, 232, 247) 0%,
+    rgb(214, 229, 247) 100%
+  );
+
+  border-radius: 50px;
+}
+
+.input {
+  padding: 10px 10px 10px 15px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 16px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  outline: none;
+  background: linear-gradient(
+    135deg,
+    rgb(239, 247, 255) 0%,
+    rgb(214, 229, 247) 100%
+  );
+}
+
+.input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-left: 2px solid black;
+  padding-left: 10px;
+}
+
+.input-container .input {
+  padding-right: 40px;
+}
+
+.input-icon i {
+  color: black;
+  font-size: 20px;
+}
+
+.input:focus + .input-icon i {
+  color: #00683c;
+}
+
+.button {
+  cursor: pointer;
+  border: solid 4px #161616;
+  border-top: none;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0px 4px 10px #00000062, 0px 10px 40px -10px #000000a6,
+    0px 12px 45px -15px #00000071;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.inner {
+  padding: 5px 20px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: solid 3px #374e72;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #5771a5, #000);
+  color: #fff;
+  text-shadow: 1px 1px #000, 0 0 9px #fff;
+}
+
+.svgs {
+  position: relative;
+  margin-top: 9px;
+  z-index: 10;
+}
+
+.svgs > * {
+  filter: drop-shadow(0 0 6px #fff) drop-shadow(1px 1px 0px #000);
+}
+
+.svgs .svg-s {
+  position: absolute;
+  font-size: 0.8rem;
+  left: 0px;
+  top: -4px;
+}
+
+.button:active {
+  box-shadow: none;
+}
+
+#qrcode {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 480px) {
+  .header {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    width: 100%;
+    height: 150px; 
+    padding: 20px;
+    position: relative;
+    background-color: #3ac3af;
+    border-radius: 0 0 50% 50%; 
+  }
+  
+  .menu-icon {
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    font-size: 30px; 
+    color: white; 
+    cursor: pointer;
+  }
+  
+  .name {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; 
+    margin-left: 65px;
+    flex-grow: 1; 
+    min-width: 0; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    margin-right: 20px; 
+  }
+  
+  
+  .profile {
+    position: absolute; 
+    /* right: 20px;  */
+    right: calc(20px - 10px);
+    top: 48%; 
+    transform: translateY(-50%); 
+    display: flex;
+    align-items: center;
+    z-index: 10; 
+  }
+  
+  .profile-img {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .profileName {
+    font-family: "Inter", serif;
+    margin: 0;
+    text-align: left; 
+    font-size: 18px;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+  }
+  
+  .profileStatus {
+    font-family: "Raleway", serif;
+    text-align: left; 
+    font-size: 14px; 
+    color: #777;
+    white-space: pre-wrap; 
+    word-break: break-word; 
+    width: 25ch; 
+    padding-top: 5px;
+  }
+  h1 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  .container {
+    margin-top: 20px;
+
+    padding: 5%;
+  }
+
+  .search-container {
+    width: 100%;
+    max-width: none;
+    padding: 5px;
+  }
+
+  .input {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .button .inner {
+    font-size: 0.9rem;
+    padding: 5px 15px;
+  }
+
+  .button {
+    margin-top: 20px;
+  }
+
+  #qrcode {
+    max-width: 200px;
+  }
+}
+
+.downloadButton {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #17795e;
+  background-color: #209978;
+  overflow: hidden;
+  margin-top: 15rem;
+}
+
+.downloadButton,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.downloadButton .button__text {
+  transform: translateX(22px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.downloadButton .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #17795e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.downloadButton .svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.downloadButton:hover {
+  background: #17795e;
+}
+
+.downloadButton:hover .button__text {
+  color: transparent;
+}
+
+.downloadButton:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.downloadButton:active .button__icon {
+  background-color: #146c54;
+}
+
+.downloadButton:active {
+  border: 1px solid #146c54;
+}

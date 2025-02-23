@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+  background-color: #F4F6FF;
+  text-align: center;
+  font-size: 0.6em;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3ac3af;
+  color: white;
+  padding: 15px 20px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.navbar-icon i {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  color: white;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navbar-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  height: 80vh;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.1em;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  padding: 0;
+  margin: 10px 0 2px 0;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+  background-color: #F4F6FF;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#score_game {
+  background-color: #3ac3af;
+}
+
+th,
+td {
+  padding: 5px 20px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#table_game {
+  position: relative;
+  font-size: 120px;
+  margin: 20% auto;
+  border-collapse: collapse;
+}
+
+.td_game {
+  border: 4px solid rgb(36, 2, 2);
+  width: 90px;
+  height: 90px;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.th_list {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+  padding: 10px 20px;
+  background-color: #3ac3af;
+  color: white;
+  border: 2px solid #2c8c89;
+}
+
+.td_list {
+  font-size: 1.3em;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #F4F6FF;
+  border: 1px solid #ccc;
+}
+
+#score_game {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#restart {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#restart img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.fixed {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.x,
+.o {
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
+}
+
+.x {
+  color: #FF6600;
+}
+
+.o {
+  color: #3ac3af;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #2D3942;
+  color: #f5f5f5;
+  font-size: 1.25em;
+  font-weight: 600;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 380px;
+  max-width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-out;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.75em;
+  color: #FFB74D;
+}
+
+h3 {
+  margin: 10px 0;
+  color: #A5D6A7;
+}
+
+label {
+  font-size: 1.1em;
+  margin-right: 15px;
+  color: #B0BEC5;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.checkbox-container {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#okBtn {
+  background-color: #FF5722;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+#okBtn:hover {
+  background-color: #FF3D00;
+}
+
+.close {
+  color: #FFB74D;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #FF5722;
+}
+
+.modal.show {
+  display: block;
+  transform: scale(1.1);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-top: 5px;
+  accent-color: #FF5722;
+}

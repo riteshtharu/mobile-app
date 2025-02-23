@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+  <link rel="stylesheet" href="joke.css">
+  <title>Joke Of The Day</title>
+
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <div class="sideProfile">
+      <a href="index6.html"><img src="person.jpg" alt="Profile Image" id="sideProfileImg"></a>
+      <div class="profile-name">User</div>
+    </div>
+
+    
+  <div class="sidebar-icon">
+    <i class="fa-solid fa-house"></i>
+  <a href="index.html"><span>Home</span></a>
+</div>
+    
+    <div class="sidebar-icon">
+      <i class="fas fa-key"></i>
+      <a href="index1.html"><span>Password Generator</span></a>
+    </div>
+  
+    <div class="sidebar-icon">
+      <i class="fas fa-qrcode"></i>
+      <a href="index2.html"><span>QR Code Generator</span></a>
+    </div>
+  
+    <div class="sidebar-icon">
+      <i class="fa-solid fa-stopwatch"></i>
+      <a href="index3.html"><span>Stop Watch</span></a>
+    </div>
+
+    <div class="sidebar-icon">
+      <i class="fa-regular fa-face-grin-tongue-wink"></i>
+      <a href="index4.html"><span>Joke Of The Day</span></a>
+    </div>
+  
+    <div class="sidebar-icon">
+      <img src="searchImage.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+      <a href="index5.html"><span>Image Search</span></a>
+    </div>
+
+    <div class="sidebar-icon">
+      <img src="tic.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+      <a href="index10.html"><span>Tic Tac Toe</span></a>
+    </div>
+
+    <div class="sidebar-icon">
+      <img src="add-task_12693750.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+      <a href="index12.html"><span>Long Note Book</span></a>
+    </div>
+
+    <div class="sidebar-icon">
+      <img src="translate_9722999.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+      <a href="index13.html"><span>Language Translator</span></a>
+    </div>
+
+    <div class="sidebar-icon">
+      <img src="ebook_3670950.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+      <a href="index14.html"><span>Kangaroo Typing</span></a>
+    </div>
+  
+    <div class="sidebar-icon">
+      <img src="math_6309817.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+      <a href="index15.html"><span>Basic Mathmatics</span></a>
+    </div>
+  
+    <div class="settings">
+      <i class="fas fa-cogs"></i>
+      <a href="index6.html"><span>Settings</span></a>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="menu-icon">
+        <i class="fas fa-bars"></i> <!-- Font Awesome menu icon -->
+    </div>
+    <div class="name">
+      <h3 class="profileName">User</h1>
+      <p class="profileStatus">Write something about you.</p>
+    </div>
+    <div class="profile">
+        <a href="index6.html">
+            <img src="person.jpg" alt="Profile Picture" class="profile-img" id="mainProfileImg">
+        </a>
+        <input type="file" id="profileUpload" accept="image/*" class="upload-input" style="display: none;">
+    </div>
+</div>
+
+<div class="main-container">
+  <div class="container" id="container">
+    <div class="heading">Joke of the Day</div>
+    <div class="joke" id="joke-text">Loading joke...</div>
+    <button class="button" id="new-joke-button">
+      <div class="inner">
+        <div class="svgs">
+          <svg
+            viewBox="0 0 256 256"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+            class="svg-l"
+          >
+            <path
+              d="M240 128a15.79 15.79 0 0 1-10.5 15l-63.44 23.07L143 229.5a16 16 0 0 1-30 0l-23.06-63.44L26.5 143a16 16 0 0 1 0-30l63.44-23.06L113 26.5a16 16 0 0 1 30 0l23.07 63.44L229.5 113a15.79 15.79 0 0 1 10.5 15"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 0 256 256"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+            class="svg-s"
+          >
+            <path
+              d="M240 128a15.79 15.79 0 0 1-10.5 15l-63.44 23.07L143 229.5a16 16 0 0 1-30 0l-23.06-63.44L26.5 143a16 16 0 0 1 0-30l63.44-23.06L113 26.5a16 16 0 0 1 30 0l23.07 63.44L229.5 113a15.79 15.79 0 0 1 10.5 15"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+        Generate
+      </div>
+    </button>
+    <!-- <button id="new-joke-button">Get a New Joke</button> -->
+  </div>
+</div>
+  
+
+
+
+  <script src="joke.js"></script>
+  <script>
+
+window.addEventListener("load", ()=>{
+        const savedProfileImage = localStorage.getItem("profileImage");
+        const savedProfileName = localStorage.getItem("profileName");
+        const savedProfileStatus = localStorage.getItem("profileStatus");
+
+        const profileNameElement2 = document.querySelector(".profileName");
+        const profileStatus = document.querySelector(".profileStatus");
+        const profileImage = document.querySelector(".profile-img");
+        const profileName = document.querySelector(".profile-name");
+        if (savedProfileImage){
+            profileImage.src = savedProfileImage;
+            sideProfileImg.src = savedProfileImage;
+        }
+        if (savedProfileName)
+        {
+            profileNameElement2.textContent = savedProfileName;
+            profileName.textContent = savedProfileName;
+        }
+        if ( savedProfileStatus)
+        {
+            profileStatus.textContent = savedProfileStatus;
+        }
+        })
+
+  const menuIcon = document.querySelector(".menu-icon");
+    const sidebar = document.querySelector(".sidebar");
+    
+    menuIcon.addEventListener("click", function (e) {
+        // Stop the click event from propagating to document (to prevent closing immediately)
+        e.stopPropagation();
+        
+        // Toggle the sidebar visibility
+        if (sidebar.style.left === "0px") {
+            // If sidebar is visible, hide it
+            sidebar.style.left = "-250px";
+        } else {
+            // If sidebar is hidden, show it
+            sidebar.style.left = "0px";
+        }
+    });
+    
+    // Hide the sidebar when clicking outside of it
+    document.addEventListener("click", function (e) {
+        // Check if the clicked target is outside the sidebar and menu icon
+        if (!sidebar.contains(e.target) && !menuIcon.contains(e.target)) {
+            // Hide the sidebar if click is outside
+            sidebar.style.left = "-250px";
+        }
+    });
+    </script>
+ 
+</body>
+
+</html>

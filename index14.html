@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- FontAwesome for reset icon -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Poppins", sans-serif; */
+    font-family: "Raleway", serif;
+}
+
+body {
+    background-color: #3ac3af;
+}
+
+.container {
+    width: 100%; /* Full width */
+    padding: 20px; /* Adjust padding as needed */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+    position: fixed; /* Fix the container at the top */
+    top: 0; /* Position at the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.stats {
+    text-align: right;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.stats p {
+    display: flex;
+    align-items: center; /* Vertically center the icon and text */
+    margin: 0; /* Remove default margin for better alignment */
+    font-size: 18px;
+    padding-top: 8px;
+}
+
+.stats .icon {
+    width: 20px; /* Adjust the size of the icon */
+    height: 20px; /* Adjust the size of the icon */
+    margin-right: 8px; /* Add some space between the icon and the text */
+}
+
+.stats span {
+    font-weight: 600;
+}
+
+#quote {
+    text-align: justify;
+    margin: 50px 0px 30px 0px;
+    cursor: text;
+    line-height: 1.5;
+    font-size: 20px;
+    font-weight:bold;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 5px;
+    font-size: 16px;
+}
+
+/* Hide the textarea visually but keep it functional */
+#quote-input {
+    opacity: 0; /* Make it fully transparent */
+    position: absolute; /* Take it out of the document flow */
+    top: -9999px; /* Move it off-screen */
+    left: -9999px;
+    width: 1px; /* Minimize its size */
+    height: 1px;
+    overflow: hidden; /* Prevent scrolling */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+}
+
+button {
+    float: right;
+    margin-top: 20px;
+    background-color: #3ac3af;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 40px;
+    display: none;
+}
+
+.result h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.wrapper p {
+    text-align: center;
+    margin: 0;
+}
+.wrapper p {
+    display: flex;
+    align-items: center; /* Vertically center the icon and text */
+    margin: 0; /* Remove default margin for better alignment */
+    font-size: 18px;
+    padding-top: 8px;
+}
+
+.wrapper .icon {
+    width: 20px; /* Adjust the size of the icon */
+    height: 20px; /* Adjust the size of the icon */
+    margin-right: 8px; /* Add some space between the icon and the text */
+}
+
+.wrapper span {
+    font-weight: 600;
+}
+
+.success {
+    color: #44b267;
+}
+
+.fail {
+    color: red;
+}
+
+/* .current-word {
+    background-color: #d02323; 
+} */
+
+.current-char {
+    background-color: #77df16; /* Highlight current character */
+}
+
+/* Style the reset button */
+#reset-test {
+    display: block;
+    margin: 20px auto;
+    background-color: #3ac3af;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Style the reset icon */
+#reset-test i {
+    margin-right: 5px;
+}
+
+/* Media query for screens with a maximum width of 480px */
+@media (max-width: 480px) {
+    .container {
+        width: 100%; 
+        padding: 10px; 
+        border-radius: 0; /* Remove border-radius for full-width effect */
+        box-shadow: none; 
+    }
+
+    #quote {
+        margin: 20px 0px 20px 0px; 
+    }
+
+    button {
+        padding: 8px 20px; /* Adjust button padding for smaller screens */
+        font-size: 16px; /* Adjust button font size for smaller screens */
+    }
+
+}
+.left-arrow {
+    position: fixed; /* Fix the icon at the bottom left */
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.arrow-icon {
+    width: 30px; /* Adjust the size of the icon */
+    height: 30px; /* Adjust the size of the icon */
+    cursor: pointer; /* Make it clickable */
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="stats">
+        <p>
+            <img src="alarm-clock_12966289.png" alt="Time Icon" class="icon"> 
+            Time:&nbsp; <span id="timer">0s</span>
+        </p>
+        <p>
+            <img src="denied_4676081.png" alt="Mistakes Icon" class="icon"> 
+            Mistakes:&nbsp; <span id="mistakes"> 0</span>
+        </p>
+    </div>
+    <div id="quote" onmousedown="return false" onselectstart="return false">
+        <!-- Quote will be loaded here -->
+    </div>
+    <textarea rows="3" id="quote-input" placeholder="Type here when the test starts"></textarea>
+    <button id="start-test" onclick="startTest()">Start Test</button>
+    <button id="stop-test" onclick="displayResult()">Stop Test</button>
+    <div class="result">
+        <h3>Result</h3>
+        <div class="wrapper">
+            <p>
+                <img src="check_16722653.png" alt="Accuracy Icon" class="icon"> 
+                Accuracy:&nbsp; <span id="accuracy"></span>
+            </p>
+            <p>
+                <img src="boost-productivety_18971512.png" alt="Speed Icon" class="icon"> 
+                Speed:&nbsp; <span id="wpm"></span>
+            </p>
+        </div>
+        <button id="reset-test" onclick="resetTest()">
+            <i class="fas fa-redo"></i> Reset
+        </button>
+    </div>
+</div>
+<div class="left-arrow">
+    <a href="index.html"><img src="left-arrow_15775943.png" alt="Left Arrow" class="arrow-icon"></a>
+</div>
+<script>
+    // API Ninjas Quotes API
+    const apiKey = "DMv+7fTYjLJwYdJ4iAHunA==xyElhgGInahCORAV"; // Replace with your API Ninjas API key
+    const quoteApiUrl = "https://api.api-ninjas.com/v1/quotes";
+
+    // Fallback quotes in case the API fails
+    const fallbackQuotes = [
+        "The sun set behind the mountains, casting a golden glow over the valley. Birds flew home, and the wind whispered through the trees.",
+        "The storm raged outside, but inside, the fireplace crackled. Anna sat by the window, sipping tea, watching the rain pour down.",
+        "The old bookshop smelled of dust and memories. Max wandered through aisles filled with forgotten stories. His fingers brushed the spines of well-loved novels.",
+        "Lena stood at the edge of the cliff, the wind in her hair. Below, the ocean crashed against the rocks, loud and powerful.",
+        "The moon hung low, casting a silvery glow on the forest path. Jack walked quietly, the leaves crunching beneath his boots.",
+        "The city buzzed with life, cars honking and people rushing. Amid the chaos, a small cafe offered a quiet escape for those who sought it.",
+        "A gentle breeze carried the scent of blooming flowers. Children laughed in the distance, their joy echoing through the park.",
+        "The stars twinkled in the night sky, each one telling a story. Sarah lay on the grass, dreaming of adventures yet to come.",
+    ];
+
+    const quoteSection = document.getElementById("quote");
+    const userInput = document.getElementById("quote-input");
+    let quote = "";
+    let time = 30; // Change from 60 to 30 seconds
+    let timer = "";
+    let mistakes = 0;
+    let currentWordIndex = 0; // Track the current word being typed
+    let currentCharIndex = 0; // Track the current character being typed
+
+    // Function to clean the quote by removing unwanted characters
+    const cleanQuote = (text) => {
+        return text.replace(/['"\-.,]/g, ""); // Remove ', ", -, ., and ,
+    };
+
+    const renderNewQuote = async () => {
+        try {
+            const response = await fetch(quoteApiUrl, {
+                headers: {
+                    "X-Api-Key": apiKey // Add API key to the request headers
+                }
+            });
+            if (!response.ok) {
+                throw new Error("Failed to fetch quote");
+            }
+            let data = await response.json();
+            let fetchedQuote = cleanQuote(data[0].quote); // Clean the fetched quote
+
+            // Log the fetched quote and its word count
+            console.log("Fetched Quote:", fetchedQuote);
+            console.log("Word Count:", fetchedQuote.split(" ").length);
+
+            // Check if the fetched quote has 15-20 words
+            const wordCount = fetchedQuote.split(" ").length;
+            if (wordCount >= 15 && wordCount <= 20) {
+                quote = fetchedQuote;
+            } else {
+                // Use a random fallback quote with 15-20 words
+                const randomIndex = Math.floor(Math.random() * fallbackQuotes.length);
+                quote = cleanQuote(fallbackQuotes[randomIndex]); // Use a random fallback quote
+                console.log("Using Fallback Quote:", quote);
+            }
+
+            // Render the quote
+            quoteSection.innerHTML = quote.split(" ").map((word, index) => {
+                return `<span class="quote-word" data-index="${index}">${word.split("").map(char => `<span class="quote-char">${char}</span>`).join("")} </span>`;
+            }).join("");
+        } catch (error) {
+            console.error("Error fetching quote:", error);
+            // Use a random fallback quote with 15-20 words
+            const randomIndex = Math.floor(Math.random() * fallbackQuotes.length);
+            quote = cleanQuote(fallbackQuotes[randomIndex]); // Use a random fallback quote
+            console.log("Using Fallback Quote (Error):", quote);
+            quoteSection.innerHTML = quote.split(" ").map((word, index) => {
+                return `<span class="quote-word" data-index="${index}">${word.split("").map(char => `<span class="quote-char">${char}</span>`).join("")} </span>`;
+            }).join("");
+        }
+    };
+
+    window.onload = () => {
+        userInput.value = "";
+        document.getElementById("start-test").style.display = "block";
+        document.getElementById("stop-test").style.display = "none";
+        userInput.disabled = true;
+        renderNewQuote();
+    };
+
+    userInput.addEventListener("input", () => {
+        const words = quote.split(" ");
+        const userInputWords = userInput.value.split(" ");
+
+        // Reset mistakes count
+        mistakes = 0;
+
+        // Highlight words and characters based on user input
+        const quoteWords = document.querySelectorAll(".quote-word");
+        quoteWords.forEach((wordElement, wordIndex) => {
+            const chars = wordElement.querySelectorAll(".quote-char");
+            if (wordIndex < userInputWords.length) {
+                const userWord = userInputWords[wordIndex];
+                chars.forEach((charElement, charIndex) => {
+                    if (charIndex < userWord.length) {
+                        if (chars[charIndex].innerText === userWord[charIndex]) {
+                            charElement.classList.add("success");
+                            charElement.classList.remove("fail");
+                        } else {
+                            charElement.classList.add("fail");
+                            charElement.classList.remove("success");
+                            mistakes++;
+                        }
+                    } else {
+                        charElement.classList.remove("success", "fail");
+                    }
+                });
+            } else {
+                chars.forEach(charElement => {
+                    charElement.classList.remove("success", "fail");
+                });
+            }
+        });
+
+        // Update the mistakes count in the UI
+        document.getElementById("mistakes").innerText = mistakes;
+
+        // Check if all words are correct
+        let check = userInputWords.every((word, index) => {
+            return word === words[index];
+        });
+
+        if (check && userInputWords.length === words.length) {
+            displayResult();
+        }
+    });
+
+    userInput.addEventListener("keyup", (event) => {
+        if (event.key === " ") {
+            moveToNextWord();
+        }
+    });
+
+    const moveToNextWord = () => {
+        const quoteWords = document.querySelectorAll(".quote-word");
+        if (currentWordIndex < quoteWords.length - 1) {
+            currentWordIndex++;
+            currentCharIndex = 0;
+            highlightCurrentWord();
+        }
+    };
+
+    const highlightCurrentWord = () => {
+        const quoteWords = document.querySelectorAll(".quote-word");
+        quoteWords.forEach((wordElement, index) => {
+            if (index === currentWordIndex) {
+                wordElement.classList.add("current-word");
+            } else {
+                wordElement.classList.remove("current-word");
+            }
+        });
+    };
+
+    function updateTimer() {
+        if (time == 0) {
+            displayResult();
+        } else {
+            document.getElementById('timer').innerText = --time + "s";
+        }
+    }
+
+    const timeReduce = () => {
+        time = 30; // Reset time to 30 seconds
+        timer = setInterval(updateTimer, 1000);
+    };
+
+    const displayResult = () => {
+        document.querySelector(".result").style.display = "block";
+        clearInterval(timer);
+        document.getElementById("stop-test").style.display = "none";
+        userInput.disabled = true;
+        let timeTaken = 1;
+        if (time != 0) {
+            timeTaken = (30 - time) / 30; // Adjust time calculation for 30 seconds
+        }
+        document.getElementById("wpm").innerText = (userInput.value.length / 5 / timeTaken).toFixed(2) + " wpm";
+        document.getElementById("accuracy").innerText = Math.round(((userInput.value.length - mistakes) / userInput.value.length) * 100) + "%";
+    };
+
+    const startTest = () => {
+        mistakes = 0;
+        timer = "";
+        userInput.disabled = false;
+        timeReduce();
+        document.getElementById("start-test").style.display = "none";
+        document.getElementById("stop-test").style.display = "block";
+        currentWordIndex = 0;
+        currentCharIndex = 0;
+        highlightCurrentWord();
+
+        // Focus on the textarea to trigger the keyboard
+        userInput.focus();
+    };
+
+    const resetTest = () => {
+        // Clear the timer
+        clearInterval(timer);
+        time = 30; // Reset time to 30 seconds
+        document.getElementById('timer').innerText = time + "s";
+
+        // Reset mistakes
+        mistakes = 0;
+        document.getElementById('mistakes').innerText = mistakes;
+
+        // Clear the textarea
+        userInput.value = "";
+        userInput.disabled = true;
+
+        // Hide the result section
+        document.querySelector(".result").style.display = "none";
+
+        // Show the start test button
+        document.getElementById("start-test").style.display = "block";
+        document.getElementById("stop-test").style.display = "none";
+
+        // Fetch a new quote
+        renderNewQuote();
+
+        // Reset current word and character highlights
+        currentWordIndex = 0;
+        currentCharIndex = 0;
+        highlightCurrentWord();
+    };
+</script>
+</body>
+</html>

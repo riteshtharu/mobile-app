@@ -1,0 +1,194 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global background-image (Positioned behind everything) */
+body {
+ 
+}
+
+/* Styling for the header */
+header {
+  background-color: #333;
+  padding: 10px 20px;
+  z-index: 1; /* Keep header above the background */
+  position: relative; /* To ensure stacking context */
+}
+
+/* Navbar container */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo and button section */
+.logo-btn {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Push logo-btn to the left side */
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.btn {
+  padding: 10px 15px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Right section container that holds both nav-links and user-cart-icons */
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-right: 20px;  /* Space between nav links and icons */
+}
+
+.nav-links li {
+  margin: 0 15px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container input {
+  padding: 8px 30px 8px 20px; /* Add padding to the left (20px) */
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #333;
+  font-size: 16px;
+  pointer-events: none; /* Prevent icon from interfering with input */
+}
+
+/* Icons section (user and cart) */
+.user-cart-icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icon:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+.icon i {
+  font-size: 16px;
+}
+
+/* Content Section */
+
+
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 50px;
+  height: 80vh; /* Set the height to 80% of the viewport height */
+  position: relative;
+}
+
+.hero-left {
+  max-width: 50%;
+  background-color: red;
+  text-align: left;
+}
+
+.hero-left h4 {
+  font-size: 18px;
+  color: #555;
+}
+
+.hero-left h1 {
+  font-size: 40px; /* Resize font for smaller height */
+  color: #333;
+  margin-top: 10px;
+}
+
+.hero-left p {
+  font-size: 16px; /* Adjust paragraph font size for better alignment */
+  color: #777;
+  margin-top: 20px;
+}
+
+.explore-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.hero-right {
+  position: relative;
+  max-width: 50%;
+  background-color: rebeccapurple;
+}
+
+.women-image {
+  width: 70%;
+  height: auto;
+  /* max-height: 70%;  */
+  /* Make sure the image doesn't take too much space vertically */
+  object-fit: cover;
+  z-index: 2;
+  margin-left: 25%;
+  margin-top: 10%;
+  position: relative;
+}
+
+.wing-image {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130%; /* Make the wing image larger to overlap nicely */
+  max-height: 100%; /* Ensure the wing image also fits within the 80vh height */
+  z-index: 1;
+  object-fit: contain;
+}
+
+

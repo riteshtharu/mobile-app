@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <link rel="stylesheet" href="qr.css">
+    <title>QR Code Generator</title>
+</head>
+<body>
+
+  <!-- Sidebar -->
+<div class="sidebar">
+  <div class="sideProfile">
+    <a href="index6.html"><img src="person.jpg" alt="Profile Image" id="sideProfileImg"></a>
+    <div class="profile-name">User</div>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fa-solid fa-house"></i>
+  <a href="index.html"><span>Home</span></a>
+</div>
+  
+  <div class="sidebar-icon">
+    <i class="fas fa-key"></i>
+    <a href="index1.html"><span>Password Generator</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fas fa-qrcode"></i>
+    <a href="index2.html"><span>QR Code Generator</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fa-solid fa-stopwatch"></i>
+    <a href="index3.html"><span>Stop Watch</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fa-regular fa-face-grin-tongue-wink"></i>
+    <a href="index4.html"><span>Joke Of The Day</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="index5.html" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index5.html"><span>Image Search</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="tic.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index10.html"><span>Tic Tac Toe</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="add-task_12693750.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index12.html"><span>Long Note Book</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="translate_9722999.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index13.html"><span>Language Translator</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="ebook_3670950.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index14.html"><span>Kangaroo Typing</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="math_6309817.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index15.html"><span>Basic Mathmatics</span></a>
+  </div>
+
+  <div class="settings">
+    <i class="fas fa-cogs"></i>
+    <a href="index6.html"><span>Settings</span></a>
+  </div>
+
+</div>
+
+    <div class="header">
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i> <!-- Font Awesome menu icon -->
+        </div>
+        <div class="name">
+          <h3 class="profileName">User</h1>
+          <p class="profileStatus">Write something about you.</p>
+        </div>
+        <div class="profile">
+            <a href="index6.html">
+                <img src="person.jpg" alt="Profile Picture" class="profile-img" id="mainProfileImg">
+            </a>
+            <input type="file" id="profileUpload" accept="image/*" class="upload-input" style="display: none;">
+        </div>
+    </div>
+    <h1>QR Code Generator</h1>
+    <div class="container">
+        <div class="input-container">
+          <div class="search-container">
+            <input class="input" type="text" placeholder="Paste Your Link..." id="dataInput">
+            <div class="input-icon">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+          </div>
+        </div>
+
+   <button class="button" id="generate-btn" onclick="generateQRCode()">
+    <div class="inner">
+      <div class="svgs">
+        <svg
+          viewBox="0 0 256 256"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+          class="svg-l"
+        >
+          <path
+            d="M240 128a15.79 15.79 0 0 1-10.5 15l-63.44 23.07L143 229.5a16 16 0 0 1-30 0l-23.06-63.44L26.5 143a16 16 0 0 1 0-30l63.44-23.06L113 26.5a16 16 0 0 1 30 0l23.07 63.44L229.5 113a15.79 15.79 0 0 1 10.5 15"
+            fill="currentColor"
+          ></path>
+        </svg>
+        <svg
+          viewBox="0 0 256 256"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+          class="svg-s"
+        >
+          <path
+            d="M240 128a15.79 15.79 0 0 1-10.5 15l-63.44 23.07L143 229.5a16 16 0 0 1-30 0l-23.06-63.44L26.5 143a16 16 0 0 1 0-30l63.44-23.06L113 26.5a16 16 0 0 1 30 0l23.07 63.44L229.5 113a15.79 15.79 0 0 1 10.5 15"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div>
+      Generate
+    </div>
+  </button>
+ 
+  <div id="qrcode" style="margin-top: 20px;"></div>
+
+  <!-- From Uiverse.io by andrew-demchenk0 --> 
+<button class="downloadButton" type="button" onclick=" downloadQRCode() ">
+    <span class="button__text">Download</span>
+    <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="bdd05811-e15d-428c-bb53-8661459f9307" data-name="Layer 2" class="svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg></span>
+  </button>
+
+  <script>
+
+window.addEventListener("load", ()=>{
+        const savedProfileImage = localStorage.getItem("profileImage");
+        const savedProfileName = localStorage.getItem("profileName");
+        const savedProfileStatus = localStorage.getItem("profileStatus");
+
+        const profileNameElement2 = document.querySelector(".profileName");
+        const profileStatus = document.querySelector(".profileStatus");
+        const profileImage = document.querySelector(".profile-img");
+        const sideProfileImg = document.querySelector("#sideProfileImg");
+        const profileName = document.querySelector(".profile-name");
+        if (savedProfileImage){
+            profileImage.src = savedProfileImage;
+            sideProfileImg.src = savedProfileImage;
+        }
+        if (savedProfileName)
+        {
+            profileNameElement2.textContent = savedProfileName;
+            profileName.textContent = savedProfileName;
+        }
+        if ( savedProfileStatus)
+        {
+            profileStatus.textContent = savedProfileStatus;
+        }
+        })
+
+    let qrCode;
+
+function generateQRCode() {
+  const data = document.getElementById("dataInput").value;
+  const qrContainer = document.getElementById("qrcode");
+
+  // Clear previous QR code if any
+  qrContainer.innerHTML = "";
+
+  // Create new QR code
+  if (data) {
+    qrCode = new QRCode(qrContainer, {
+      text: data,
+      width: 128,
+      height: 128,
+    });
+  } else {
+    alert("Please enter some data to generate QR code.");
+  }
+}
+
+function downloadQRCode() {
+  // Make sure a QR code is generated
+  if (!qrCode) {
+    alert("Please generate a QR code first.");
+    return;
+  }
+
+  // Get the canvas element that contains the QR code
+  const canvas = document.querySelector("#qrcode canvas");
+
+  if (canvas) {
+    const imageUrl = canvas.toDataURL("image/png");
+
+    // Create a temporary link element for downloading the image
+    const downloadLink = document.createElement("a");
+    downloadLink.href = imageUrl;
+    downloadLink.download = "qrcode.png"; // Set the default download file name
+
+    // Trigger the download by simulating a click on the link
+    downloadLink.click();
+  } else {
+    alert("QR code is not yet generated.");
+  }
+}
+  </script>
+  <script src="qr.js"></script>
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="password.css">
+    <title>Password Generator</title>
+</head>
+<body>
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="sideProfile">
+    <a href="index6.html"><img src="person.jpg" alt="Profile Image" id="sideProfileImg"></a>
+    <div class="profile-name">Ritesh</div>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fa-solid fa-house"></i>
+  <a href="index.html"><span>Home</span></a>
+</div>
+  
+  <div class="sidebar-icon">
+    <i class="fas fa-key"></i>
+    <a href="index1.html"><span>Password Generator</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fas fa-qrcode"></i>
+    <a href="index2.html"><span>QR Code Generator</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fa-solid fa-stopwatch"></i>
+    <a href="index3.html"><span>Stop Watch</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fa-regular fa-face-grin-tongue-wink"></i>
+    <a href="index4.html"><span>Joke Of The Day</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="searchImage.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index5.html"><span>Image Search</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="tic.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index10.html"><span>Tic Tac Toe</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="add-task_12693750.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index12.html"><span>Long Note Book</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="translate_9722999.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index13.html"><span>Language Translator</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="ebook_3670950.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index14.html"><span>Kangaroo Typing</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="math_6309817.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index15.html"><span>Basic Mathmatics</span></a>
+  </div>
+
+  <div class="settings">
+    <i class="fas fa-cogs"></i>
+    <a href="index6.html"><span>Settings</span></a>
+  </div>
+</div>
+  
+<div class="header">
+  <div class="menu-icon">
+      <i class="fas fa-bars"></i> <!-- Font Awesome menu icon -->
+  </div>
+  <div class="name">
+    <h3 class="profileName">User</h1>
+    <p class="profileStatus">Write something about you.</p>
+  </div>
+  <div class="profile">
+      <a href="next_page.html">
+          <img src="person.jpg" alt="Profile Picture" class="profile-img" id="mainProfileImg">
+      </a>
+      <input type="file" id="profileUpload" accept="image/*" class="upload-input" style="display: none;">
+  </div>
+</div>
+
+<div class="main-container">
+<div class="container">
+  <div class="heading">Password Generator</div>
+
+  <input type="text" id="passwordField" class="password-field" readonly>
+
+  <!-- <button class="copy-btn" id="copyBtn" onclick="copyPassword()">Copy</button> -->
+   
+<button class="copy copy-btn" id="copyBtn" onclick="copyPassword()">
+<span data-text-end="Copied!" data-text-initial="Copy to clipboard" class="tooltip"></span>
+<span>
+<svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35" y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="clipboard">
+<g>
+  <path fill="currentColor" d="M2.43.265c-.3 0-.548.236-.573.53h-.328a.74.74 0 0 0-.735.734v3.822a.74.74 0 0 0 .735.734H4.82a.74.74 0 0 0 .735-.734V1.529a.74.74 0 0 0-.735-.735h-.328a.58.58 0 0 0-.573-.53zm0 .529h1.49c.032 0 .049.017.049.049v.431c0 .032-.017.049-.049.049H2.43c-.032 0-.05-.017-.05-.049V.843c0-.032.018-.05.05-.05zm-.901.53h.328c.026.292.274.528.573.528h1.49a.58.58 0 0 0 .573-.529h.328a.2.2 0 0 1 .206.206v3.822a.2.2 0 0 1-.206.205H1.53a.2.2 0 0 1-.206-.205V1.529a.2.2 0 0 1 .206-.206z"></path>
+</g>
+</svg>
+<svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="18" width="18" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="checkmark">
+<g>
+  <path data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
+</g>
+</svg>
+</span>
+</button>
+  
+
+  <!-- <button class="add-task" id="addTask" onclick="addTask()">Add</button> -->
+
+<div class="checkbox-container" class="add-task" id="addTask" onclick="addTask()">
+<div class="checkbox-wrapper">
+<input class="checkbox" id="checkbox" type="checkbox" />
+<label class="checkbox-label" for="checkbox">
+<div class="checkbox-flip">
+  <div class="checkbox-front">
+    <svg
+      fill="white"
+      height="20"
+      width="20"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 13H12V19H11V13H5V12H11V6H12V12H19V13Z"
+        class="icon-path"
+      ></path>
+    </svg>
+  </div>
+  <div class="checkbox-back">
+    <svg
+      fill="white"
+      height="20"
+      width="20"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9 19l-7-7 1.41-1.41L9 16.17l11.29-11.3L22 6l-13 13z"
+        class="icon-path"
+      ></path>
+    </svg>
+  </div>
+</div>
+</label>
+</div>
+</div>
+
+  <div class="options">
+      <div>
+          <label for="length">Length</label>
+          <input type="number" id="length" class="length-input" value="12" min="4" max="20">
+      </div>
+      <div>
+          <label for="uppercase"><span id="underline" style="color: #3ac3af; text-decoration: underline; font-weight: bold;">A</span><span id="normal" style="margin-right: 10px; color: #3ac3af; font-weight: bold;">a</span>Uppercase</label>
+
+<label class="neon-checkbox">
+<input type="checkbox" id="uppercase">
+<div class="neon-checkbox__frame">
+<div class="neon-checkbox__box">
+  <div class="neon-checkbox__check-container">
+    <svg viewBox="0 0 24 24" class="neon-checkbox__check">
+      <path d="M3,12.5l7,7L21,5"></path>
+    </svg>
+  </div>
+  <div class="neon-checkbox__glow"></div>
+  <div class="neon-checkbox__borders">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</div>
+<div class="neon-checkbox__effects">
+  <div class="neon-checkbox__particles">
+    <span></span><span></span><span></span><span></span> <span></span
+    ><span></span><span></span><span></span> <span></span><span></span
+    ><span></span><span></span>
+  </div>
+  <div class="neon-checkbox__rings">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+  </div>
+  <div class="neon-checkbox__sparks">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</div>
+</div>
+</label>
+
+      </div>
+  </div>
+
+  <div class="options">
+      <div>
+          <label for="lowercase"><span id="normal" style="color: #3ac3af; font-weight: bold;">A</span><span id="underline" style="margin-right: 10px; text-decoration: underline; color: #3ac3af; font-weight: bold;">a</span>Lowercase</label>
+          <!-- From Uiverse.io by 00Kubi --> 
+<label class="neon-checkbox">
+<input type="checkbox" id="lowercase">
+<div class="neon-checkbox__frame">
+<div class="neon-checkbox__box">
+  <div class="neon-checkbox__check-container">
+    <svg viewBox="0 0 24 24" class="neon-checkbox__check">
+      <path d="M3,12.5l7,7L21,5"></path>
+    </svg>
+  </div>
+  <div class="neon-checkbox__glow"></div>
+  <div class="neon-checkbox__borders">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</div>
+<div class="neon-checkbox__effects">
+  <div class="neon-checkbox__particles">
+    <span></span><span></span><span></span><span></span> <span></span
+    ><span></span><span></span><span></span> <span></span><span></span
+    ><span></span><span></span>
+  </div>
+  <div class="neon-checkbox__rings">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+  </div>
+  <div class="neon-checkbox__sparks">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</div>
+</div>
+</label>
+
+      </div>
+      <div>
+          <label for="numbers"><span id="normal" style="color: #3ac3af; font-weight: bold;">1</span><span id="normal" style="color: #3ac3af; font-weight: bold;">2</span><span id="normal" style="margin-right: 10px; color: #3ac3af; font-weight: bold;">3</span>Numbers</label>
+          <!-- From Uiverse.io by 00Kubi --> 
+<label class="neon-checkbox">
+<input type="checkbox" id="numbers">
+<div class="neon-checkbox__frame">
+<div class="neon-checkbox__box">
+  <div class="neon-checkbox__check-container">
+    <svg viewBox="0 0 24 24" class="neon-checkbox__check">
+      <path d="M3,12.5l7,7L21,5"></path>
+    </svg>
+  </div>
+  <div class="neon-checkbox__glow"></div>
+  <div class="neon-checkbox__borders">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</div>
+<div class="neon-checkbox__effects">
+  <div class="neon-checkbox__particles">
+    <span></span><span></span><span></span><span></span> <span></span
+    ><span></span><span></span><span></span> <span></span><span></span
+    ><span></span><span></span>
+  </div>
+  <div class="neon-checkbox__rings">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+  </div>
+  <div class="neon-checkbox__sparks">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</div>
+</div>
+</label>
+
+      </div>
+      <div>
+          <label for="symbols"><span id="normal" style="font-weight: bold; color: #3ac3af;">!</span><span id="normal" style="font-weight: bold; color: #3ac3af; margin-right: 10px;">=</span>Symbols</label>
+          <!-- From Uiverse.io by 00Kubi --> 
+<label class="neon-checkbox">
+<input type="checkbox" id="symbols">
+<div class="neon-checkbox__frame">
+<div class="neon-checkbox__box">
+  <div class="neon-checkbox__check-container">
+    <svg viewBox="0 0 24 24" class="neon-checkbox__check">
+      <path d="M3,12.5l7,7L21,5"></path>
+    </svg>
+  </div>
+  <div class="neon-checkbox__glow"></div>
+  <div class="neon-checkbox__borders">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</div>
+<div class="neon-checkbox__effects">
+  <div class="neon-checkbox__particles">
+    <span></span><span></span><span></span><span></span> <span></span
+    ><span></span><span></span><span></span> <span></span><span></span
+    ><span></span><span></span>
+  </div>
+  <div class="neon-checkbox__rings">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+  </div>
+  <div class="neon-checkbox__sparks">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</div>
+</div>
+</label>
+
+      </div>
+  </div>
+
+  <!-- <button class="generate-btn" onclick="generatePassword()">Generate</button> -->
+  <button class="button" id="generate-btn" onclick="generatePassword()">
+      <div class="inner">
+        <div class="svgs">
+          <svg
+            viewBox="0 0 256 256"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+            class="svg-l"
+          >
+            <path
+              d="M240 128a15.79 15.79 0 0 1-10.5 15l-63.44 23.07L143 229.5a16 16 0 0 1-30 0l-23.06-63.44L26.5 143a16 16 0 0 1 0-30l63.44-23.06L113 26.5a16 16 0 0 1 30 0l23.07 63.44L229.5 113a15.79 15.79 0 0 1 10.5 15"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <svg
+            viewBox="0 0 256 256"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+            class="svg-s"
+          >
+            <path
+              d="M240 128a15.79 15.79 0 0 1-10.5 15l-63.44 23.07L143 229.5a16 16 0 0 1-30 0l-23.06-63.44L26.5 143a16 16 0 0 1 0-30l63.44-23.06L113 26.5a16 16 0 0 1 30 0l23.07 63.44L229.5 113a15.79 15.79 0 0 1 10.5 15"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+        Generate
+      </div>
+    </button>
+
+</div>
+</div>
+
+<script>
+
+
+
+  window.addEventListener("load", ()=>{
+  const savedProfileImage = localStorage.getItem("profileImage");
+  const savedProfileName = localStorage.getItem("profileName");
+  const savedProfileStatus = localStorage.getItem("profileStatus");
+
+  const profileNameElement2 = document.querySelector(".profileName");
+  const profileStatus = document.querySelector(".profileStatus");
+  const profileImage = document.querySelector(".profile-img");
+  const sideProfileImg = document.querySelector("#sideProfileImg");
+  const profileName = document.querySelector(".profile-name");
+ 
+  
+  if (savedProfileImage){
+      profileImage.src = savedProfileImage;
+      sideProfileImg.src = savedProfileImage;  // Update the sidebar profile image
+  }
+  if (savedProfileName)
+  {
+      profileNameElement2.textContent = savedProfileName;
+      profileName.textContent = savedProfileName;
+  }
+  if ( savedProfileStatus)
+  {
+      profileStatus.textContent = savedProfileStatus;
+  }
+  })
+
+  function generatePassword() {
+      const length = document.getElementById('length').value;
+      const includeUppercase = document.getElementById('uppercase').checked;
+      const includeLowercase = document.getElementById('lowercase').checked;
+      const includeNumbers = document.getElementById('numbers').checked;
+      const includeSymbols = document.getElementById('symbols').checked;
+
+      const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+      const numberChars = '0123456789';
+      const symbolChars = '!@#$%^&*()_+[]{}|;:,.<>?';
+
+      let charSet = '';
+      if (includeUppercase) charSet += uppercaseChars;
+      if (includeLowercase) charSet += lowercaseChars;
+      if (includeNumbers) charSet += numberChars;
+      if (includeSymbols) charSet += symbolChars;
+
+      if (charSet === '') {
+          alert('Please select at least one character type.');
+          return;
+      }
+
+      let password = '';
+      for (let i = 0; i < length; i++) {
+          const randomIndex = Math.floor(Math.random() * charSet.length);
+          password += charSet[randomIndex];
+      }
+
+      document.getElementById('passwordField').value = password;
+  }
+
+  document.getElementById('passwordField').addEventListener('input', function() {
+const copyButton = document.getElementById('copyBtn');
+const tooltip = copyButton.querySelector('.tooltip');
+const passwordField = document.getElementById('passwordField').value.trim();
+
+// If the password field is empty, hide the tooltip and prevent showing it on hover
+if (passwordField === "") {
+  tooltip.style.opacity = 0;
+  tooltip.style.visibility = 'hidden';
+
+  
+}
+});
+
+function copyPassword() {
+const passwordField = document.getElementById('passwordField');
+const tooltip = document.querySelector('.tooltip');
+const copyButton = document.getElementById('copyBtn');
+const checkmark = copyButton.querySelector('.checkmark');
+const clipboard = copyButton.querySelector('.clipboard');
+
+// Check if the password field is not empty
+if (passwordField.value.trim() !== "") {
+  // If not empty, copy the password to clipboard
+  passwordField.select();
+  document.execCommand('copy');
+  
+  // Show the "Copied!" tooltip and checkmark
+  tooltip.setAttribute("data-text-initial", "Copied!");
+  tooltip.style.opacity = 1;
+  tooltip.style.visibility = 'visible';
+  
+  checkmark.style.display = "block";  // Show checkmark
+  clipboard.style.display = "none";  // Hide clipboard icon
+  
+  // Optionally hide the tooltip and checkmark after a few seconds
+  setTimeout(() => {
+      tooltip.style.opacity = 0;
+      tooltip.style.visibility = 'hidden';
+      checkmark.style.display = "none";  // Hide checkmark after timeout
+      clipboard.style.display = "block";  // Show clipboard icon again
+  }, 2000);
+} else {
+  // If the input is empty, hide tooltip and checkmark immediately
+  tooltip.style.opacity = 0;
+  tooltip.style.visibility = 'hidden';
+  checkmark.style.display = "none";  // Ensure checkmark doesn't show
+  clipboard.style.display = "block";  // Show clipboard icon
+}
+}
+
+document.getElementById('passwordField').addEventListener('input', function() {
+const copyButton = document.getElementById('copyBtn');
+const checkboxWrapper = document.querySelector('.checkbox-wrapper');
+const tooltip = copyButton.querySelector('.tooltip');
+const passwordField = document.getElementById('passwordField').value.trim();
+
+// If the password field is empty
+if (passwordField === "") {
+  tooltip.style.opacity = 0;
+  tooltip.style.visibility = 'hidden';  // Hide tooltip
+  
+  // Disable the checkbox and prevent any actions
+  checkboxWrapper.classList.add('disabled-checkbox');
+  document.querySelector('#taskCheckbox').disabled = true;  // Assuming #taskCheckbox is your checkbox id
+} else {
+  // Enable the checkbox
+  checkboxWrapper.classList.remove('disabled-checkbox');
+  document.querySelector('#taskCheckbox').disabled = false;
+}
+});
+
+
+
+  
+
+function addTask() {
+const passwordField = document.getElementById('passwordField').value.trim(); 
+
+
+if (passwordField === "") {
+  alert('Password field is empty!');
+
+  const checkboxWrapper = document.querySelector('.checkbox-wrapper');
+  checkboxWrapper.classList.add('disabled-checkbox');
+  return; 
+}
+
+
+const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+
+const taskExists = tasks.some(task => task.text === passwordField);
+
+if (taskExists) {
+  alert('This password task already exists!');
+  return; 
+}
+
+
+const timestamp = new Date().getTime();
+
+
+tasks.push({ text: passwordField, timestamp: timestamp });
+
+localStorage.setItem("tasks", JSON.stringify(tasks));
+
+alert('Password has been added as a task!');
+
+const checkboxWrapper = document.querySelector('.checkbox-wrapper');
+checkboxWrapper.classList.remove('disabled-checkbox');
+}
+
+</script>
+<script src="password.js"></script>
+
+</body>
+</html>

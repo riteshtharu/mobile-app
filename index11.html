@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="game1.css">
+    <title>Double User Tic-Tac-Toe</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-icon">
+            <a href="index10.html"><i class="fas fa-arrow-left"></i> </a>
+        </div>
+        <div class="navbar-title">Tic Tac Toe Game</div>
+    </nav>
+    <div id="tic-tac-toe">
+        <div class="scoreboard">
+            <table id="score_game">
+                <tr>
+                    <th class="th_list">X Wins</th>
+                    <th class="th_list">O Wins</th>
+                </tr>
+                <tr>
+                    <td class="td_list" id="x_win">0</td>
+                    <td class="td_list" id="o_win">0</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="game" class="game-board">
+            <div class="row">
+                <div class="cell" id="cell1"></div>
+                <div class="cell" id="cell2"></div>
+                <div class="cell" id="cell3"></div>
+            </div>
+            <div class="row">
+                <div class="cell" id="cell4"></div>
+                <div class="cell" id="cell5"></div>
+                <div class="cell" id="cell6"></div>
+            </div>
+            <div class="row">
+                <div class="cell" id="cell7"></div>
+                <div class="cell" id="cell8"></div>
+                <div class="cell" id="cell9"></div>
+            </div>
+        </div>
+
+        <div id="reset" title="Start new game" onclick="restartGame(true)">
+            <img src="restart.png" alt="Restart" />
+        </div>
+    </div>
+
+      <script src="game1.js"></script>
+</body>
+</html>

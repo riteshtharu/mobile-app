@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #3ac3af;
+    color: white; 
+    padding: 15px 20px;
+    font-family: Arial, sans-serif; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    position: relative;
+}
+.navbar-icon i {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    color: white;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    cursor: pointer; /* Make the icon clickable */
+}
+
+.navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#tic-tac-toe {
+    text-align: center;
+}
+
+.scoreboard {
+    margin: 20px 0;
+}
+
+/* Styling for the table */
+#score_game {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.th_list {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #3ac3af;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #2c8c89;
+}
+
+.td_list {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+/* Styling for the game grid */
+#game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+#reset {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin: 10px auto;
+}
+
+#reset img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.winner {
+    background-color: #ffcc00;
+}
+
+.disable {
+    pointer-events: none;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="main.css">
+  <title>Keep Note</title>
+</head>
+
+<body>
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="sideProfile">
+    <a href="index6.html"><img src="person.jpg" alt="Profile Image"></a>
+    <div class="profile-name">User</div>
+  </div>
+
+  <!-- <div class="sidebar-icon">
+    <i class="fa-solid fa-house"></i>
+  <a href="index.html"><span>Home</span></a>
+</div> -->
+  
+  <div class="sidebar-icon">
+    <i class="fas fa-key"></i>
+    <a href="index1.html"><span>Password Generator</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fas fa-qrcode"></i>
+    <a href="index2.html"><span>QR Code Generator</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fa-solid fa-stopwatch"></i>
+    <a href="index3.html"><span>Stop Watch</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <i class="fa-regular fa-face-grin-tongue-wink"></i>
+    <a href="index4.html"><span>Joke Of The Day</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="searchImage.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index5.html"><span>Image Search</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="tic.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index10.html"><span>Tic Tac Toe</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="add-task_12693750.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index12.html"><span>Long Note Book</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="translate_9722999.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index13.html"><span>Language Translator</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="ebook_3670950.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index14.html"><span>Kangaroo Typing</span></a>
+  </div>
+
+  <div class="sidebar-icon">
+    <img src="math_6309817.png" alt="Image" style="max-width: 20px; margin-right: 6px;">
+    <a href="index15.html"><span>Basic Mathmatics</span></a>
+  </div>
+
+  <div class="settings">
+    <i class="fas fa-cogs"></i>
+    <a href="index6.html"><span>Settings</span></a>
+  </div>
+  
+</div>
+
+  <div class="header">
+    <div class="menu-icon">
+        <i class="fas fa-bars"></i> 
+    </div>
+    <div class="name">
+      <h3 class="profileName">User</h1>
+      <p class="profileStatus">Write something about you.</p>
+    </div>
+    <div class="profile">
+        <a href="index6.html">
+            <img src="person.jpg" alt="Profile Picture" class="profile-img" id="mainProfileImg">
+        </a>
+        <input type="file" id="profileUpload" accept="image/*" class="upload-input" style="display: none;">
+    </div>
+    
+</div>
+
+
+  
+
+
+
+  <div class="container">
+    <div class="input-container">
+      <div class="search-container">
+        <input class="input" type="text" placeholder="Type a task..." id="input-box">
+        <div class="input-icon">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+      </div>
+    </div>
+    <button class="btn-class-name" onclick="addTask()">
+      <i class="fa-solid fa-plus"></i>
+      <span class="back"></span>
+      <span class="front"></span>
+    </button>
+  </div>
+
+  <ul id="list-container"></ul>
+
+
+<script>
+
+  
+const profileImgMain = document.querySelector("#mainProfileImg");
+const profileNameElement = document.querySelector(".profileName");
+const profileStatusElement = document.querySelector(".profileStatus");
+
+window.addEventListener("load", () => {
+    const savedProfileImage = localStorage.getItem("profileImage");
+    const savedProfileName = localStorage.getItem("profileName");
+    const savedProfileStatus = localStorage.getItem("profileStatus");
+
+    const profileImgMain = document.querySelector(".sidebar .sideProfile img");  
+    const profileImgMain2 = document.querySelector(".profile img");  
+    const profileNameElement = document.querySelector(".sidebar .sideProfile .profile-name");  
+    const profileNameElement2 = document.querySelector(".profileName");  
+
+    if (savedProfileImage) {
+        profileImgMain.src = savedProfileImage;  
+        profileImgMain2.src = savedProfileImage;  
+    }
+
+    if (savedProfileName) {
+        profileNameElement.textContent = savedProfileName;  
+        profileNameElement2.textContent = savedProfileName;  
+    }
+
+    const profileStatusElement = document.querySelector(".profileStatus");
+    if (savedProfileStatus) {
+        profileStatusElement.textContent = savedProfileStatus;  
+    }
+
+    showTask();  
+});
+
+
+
+const menuIcon = document.querySelector(".menu-icon");
+const sidebar = document.querySelector(".sidebar");
+
+menuIcon.addEventListener("click", function (e) {
+    e.stopPropagation();
+    
+    if (sidebar.style.left === "0px") {
+        sidebar.style.left = "-250px";
+    } else {
+        sidebar.style.left = "0px";
+    }
+});
+
+document.addEventListener("click", function (e) {
+    if (!sidebar.contains(e.target) && !menuIcon.contains(e.target)) {
+        sidebar.style.left = "-250px";
+    }
+});
+
+
+
+  </script>
+  <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+    <!-- Include SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- Include Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Include Confetti JS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #3ac3af;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 31.25em;
+            padding: 5em 3em;
+            border-radius: 0.5em;
+            text-align: center;
+            position: relative;
+        }
+        .container img {
+            width: 100%; /* Adjust the width of the image */
+            max-width: 300px; /* Set a maximum width for the image */
+            margin-bottom: 1em; /* Add space below the image */
+        }
+        .container h3 {
+            font-size: 1.2em;
+            color: #23234c;
+            font-weight: 500;
+            line-height: 1.8em;
+        }
+        .container #submit-btn {
+            font-size: 1.2em;
+            font-weight: 500;
+            display: block;
+            margin: 1em auto 0;
+            background-color: #f4c531;
+            border-radius: 0.3em;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: #23234c;
+            padding: 0.6em 2em;
+        }
+        .container #reset-btn {
+            font-size: 1.2em;
+            font-weight: 500;
+            display: block;
+            margin: 0.5em auto 0;
+            background-color: #ff4d4d;
+            border-radius: 0.3em;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: #ffffff;
+            padding: 0.6em 1.5em;
+        }
+        #error-msg {
+            text-align: center;
+            margin-top: 1em;
+            background-color: #ffdde0;
+            color: red;
+            padding: 0.2em 0;
+        }
+        .container #question {
+            /* background-color: #eeedf1; */
+            font-size: 2em;
+            font-weight: 600;
+            color: #23234c;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.4em 0 1em 0;
+            padding: 1em 0;
+        }
+        .container input {
+            font-size: 1em;
+            font-weight: 600;
+            width: 2.35em;
+            color: #23234c;
+            text-align: center;
+            padding: 0 0.2em;
+            border: none;
+            background-color: transparent;
+            border-bottom: 0.12em solid #23234c;
+            margin: 0 0.25em;
+        }
+        .container input:focus {
+            border-color: #f4c531;
+            outline: none;
+        }
+        .container input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        .container input[type="number"]::-webkit-outer-spin-button,
+        .container input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .controls-container {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #3ac3af;
+            height: 100%;
+            width: 100%;
+            top: 0;
+        }
+        .controls-container img {
+            width: 300px; /* Adjust size as needed */
+            margin-bottom: 1em; /* Space between image and button */
+        }
+        #start-btn {
+            font-size: 1.2em;
+            font-weight: 500;
+            background-color: #3ac3af;
+            color: #23234c;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0.8em 1.8em;
+            border-radius: 0.3em;
+        }
+        #result {
+            margin-bottom: 1em;
+            font-size: 1.5em;
+            color: #23234c;
+        }
+        #result span {
+            font-weight: 600;
+        }
+        .hide {
+            display: none;
+        }
+        .left-arrow {
+    position: fixed; /* Fix the icon at the bottom left */
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.arrow-icon {
+    width: 30px; /* Adjust the size of the icon */
+    height: 30px; /* Adjust the size of the icon */
+    cursor: pointer; /* Make it clickable */
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Replace <h3> with <img> -->
+        <img src="mathMain.png" alt="Fill in the Blanks">
+        <div id="question"></div>
+        <button id="submit-btn">Submit</button>
+        <button id="reset-btn"><i class="fas fa-redo"></i> Reset</button>
+        <p id="error-msg" class="hide">Some Demo Error Message</p>
+    </div>
+    <div class="left-arrow">
+        <a href="index.html"><img src="left-arrow_15775943.png" alt="Left Arrow" class="arrow-icon"></a>
+    </div>
+    <div class="controls-container">
+        <!-- Add your PNG image here -->
+        <img src="math.png" alt="Fun Image">
+        <p id="result"></p>
+        <button id="start-btn">Start Game</button>
+    </div>
+
+    <!-- Include SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        let operators = ["+", "-", "*"];
+        const startBtn = document.getElementById("start-btn");
+        const question = document.getElementById("question");
+        const controls = document.querySelector(".controls-container");
+        const result = document.getElementById("result");
+        const submitBtn = document.getElementById("submit-btn");
+        const resetBtn = document.getElementById("reset-btn");
+        const errorMessage = document.getElementById("error-msg");
+        let answerValue;
+        let operatorQuestion;
+
+        const randomValue = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+        const questionGenerator = () => {
+            let [num1, num2] = [randomValue(1, 20), randomValue(1, 20)];
+
+            let randomOperator = operators[Math.floor(Math.random() * operators.length)];
+            if (randomOperator == "-" && num2 > num1) {
+                [num1, num2] = [num2, num1];
+            }
+            let solution = eval(`${num1}${randomOperator}${num2}`);
+            let randomVar = randomValue(1, 5);
+
+            if (randomVar == 1) {
+                answerValue = num1;
+                question.innerHTML = `<input type="number" id="inputValue" placeholder="?"> ${randomOperator} ${num2} = ${solution}`;
+            } else if (randomVar == 2) {
+                answerValue = num2;
+                question.innerHTML = `${num1} ${randomOperator} <input type="number" id="inputValue" placeholder="?"> = ${solution}`;
+            } else if (randomVar == 3) {
+                answerValue = randomOperator;
+                operatorQuestion = true;
+                question.innerHTML = `${num1} <input type="text" id="inputValue" placeholder="?"> ${num2} = ${solution}`;
+            } else {
+                answerValue = solution;
+                question.innerHTML = `${num1} ${randomOperator} ${num2} = <input type="number" id="inputValue" placeholder="?">`;
+            }
+        };
+
+        const resetGame = () => {
+            document.getElementById("inputValue").value = ""; // Clear input field
+            errorMessage.classList.add("hide"); // Hide error message
+            questionGenerator(); // Generate a new question
+        };
+
+        const fireConfetti = () => {
+            const count = 200;
+            const defaults = {
+                origin: { y: 0.7 },
+            };
+
+            function fire(particleRatio, opts) {
+                confetti(
+                    Object.assign({}, defaults, opts, {
+                        particleCount: Math.floor(count * particleRatio),
+                    })
+                );
+
+                // Ensure the canvas has a high z-index
+                const canvas = document.querySelector("canvas");
+                if (canvas) {
+                    canvas.style.position = "fixed";
+                    canvas.style.zIndex = 99999; // Very high z-index
+                }
+            }
+
+            fire(0.25, {
+                spread: 26,
+                startVelocity: 55,
+            });
+
+            fire(0.2, {
+                spread: 60,
+            });
+
+            fire(0.35, {
+                spread: 100,
+                decay: 0.91,
+                scalar: 0.8,
+            });
+
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 25,
+                decay: 0.92,
+                scalar: 1.2,
+            });
+
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 45,
+            });
+        };
+
+        submitBtn.addEventListener("click", () => {
+            errorMessage.classList.add("hide");
+            let userInput = document.getElementById("inputValue").value;
+            if (userInput) {
+                if (userInput == answerValue) {
+                    // Show SweetAlert2 modal and trigger confetti at the same time
+                    Swal.fire({
+                        title: "Correct Answer!",
+                        icon: "success",
+                        draggable: true,
+                    });
+                    fireConfetti(); // Trigger confetti immediately
+                } else if (operatorQuestion && !operators.includes(userInput)) {
+                    errorMessage.classList.remove("hide");
+                    errorMessage.innerHTML = "Please Enter a Valid Operator";
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "The answer is not correct!",
+                    });
+                }
+            } else {
+                errorMessage.classList.remove("hide");
+                errorMessage.innerHTML = "Input Cannot Be Empty";
+            }
+        });
+
+        resetBtn.addEventListener("click", resetGame);
+
+        startBtn.addEventListener("click", () => {
+            operatorQuestion = false;
+            answerValue = "";
+            errorMessage.innerHTML = "";
+            errorMessage.classList.add("hide");
+            controls.classList.add("hide");
+            startBtn.classList.add("hide");
+            questionGenerator();
+        });
+
+        questionGenerator();
+    </script>
+</body>
+</html>
